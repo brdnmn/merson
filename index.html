@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merson</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Georgia,serif;background:#f7f5f1;color:#111}
+    a{text-decoration:none;color:inherit}
+    .password-gate{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:1000}
+    .gate-box{background:rgba(255,255,255,.06);backdrop-filter:blur(20px);padding:40px;border-radius:24px;border:1px solid rgba(255,255,255,.1);text-align:center;color:#fff;width:90%;max-width:420px}
+    .gate-box img{width:90px;filter:brightness(8) contrast(10) invert;margin-bottom:20px}
+    .gate-box input{width:100%;padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;margin:16px 0}
+    .gate-box button{width:100%;padding:14px;border:none;border-radius:999px;background:#fff;color:#000;cursor:pointer}
+    header{display:flex;justify-content:space-between;align-items:center;padding:28px 60px;letter-spacing:.25em;text-transform:uppercase;font-size:12px}
+    nav{display:flex;gap:28px}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:50px 60px;align-items:center}
+    .hero-left{display:flex;align-items:center;gap:40px}
+    .hero-left img{width:160px}
+    .divider{width:1px;height:180px;background:rgba(0,0,0,.15)}
+    .hero-copy h2{font-size:48px;letter-spacing:.15em;margin-bottom:20px}
+    .hero-copy p{font-size:18px;color:#555;max-width:420px;margin-bottom:24px}
+    .hero-right img{width:100%;border-radius:18px;filter:blur(10px) brightness(.95);transform:scale(1.03)}
+    .products{padding:40px 60px}
+    .products h3{text-align:center;letter-spacing:.35em;text-transform:uppercase;margin-bottom:30px}
+    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+    .card{background:#fff;padding:14px;border-radius:14px;text-align:center;overflow:hidden}
+    .card img{width:100%;height:220px;object-fit:cover;filter:blur(8px) brightness(.96);transform:scale(1.04);transition:all .4s ease}
+    .card h4{margin-top:14px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+    .card p{font-size:11px;color:#777;text-transform:uppercase;margin-top:4px}
+    footer{background:#050505;color:#fff;padding:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px}
+    @media(max-width:1000px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="password-gate" id="passwordGate">
+    <div class="gate-box">
+      <img src="logo.png" alt="Merson Logo">
+      <h2>PRIVATE ACCESS</h2>
+      <p>Enter password to access the Merson showroom.</p>
+      <input type="password" id="passwordInput" placeholder="Password">
+      <button onclick="unlockSite()">Enter Showroom</button>
+    </div>
+  </div>
+
+  <header>
+    <nav><a href="#">Home</a><a href="#">Collection</a><a href="#">About</a></nav>
+    <h1>MERSON</h1>
+    <nav><a href="#">Contact</a><a href="#">Bag (0)</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <img src="black-logo.png" alt="Logo">
+      <div class="divider"></div>
+      <div class="hero-copy">
+        <h2>MINIMAL LUXURY.</h2>
+        <p>Timeless essentials. Elevated design. Built for every day.</p>
+        <a href="#">EXPLORE COLLECTION</a>
+      </div>
+    </div>
+    <div class="hero-right"><img src="2shirt.png" alt="Hero Products"></div>
+  </section>
+
+  <section class="products">
+    <h3>COLLECTION PREVIEW</h3>
+    <div class="grid">
+      <div class="card"><img src="product-1.png"><h4>Chest Logo</h4><p>Coming Soon</p></div>
+      <div class="card"><img src="product-2.png"><h4>Wordmark</h4><p>Coming Soon</p></div>
+      <div class="card"><img src="product-3.png"><h4>Back Print</h4><p>Coming Soon</p></div>
+      <div class="card"><img src="product-4.png"><h4>Line Detail</h4><p>Coming Soon</p></div>
+      <div class="card"><img src="product-5.png"><h4>Minimal Text</h4><p>Coming Soon</p></div>
+      <div class="card"><img src="product-6.png"><h4>Back Wordmark</h4><p>Coming Soon</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div><h4>ABOUT MERSON</h4><p>Merson is a contemporary clothing brand focused on minimal design, premium quality, and timeless style.</p></div>
+    <div><h4>MADE TO LAST</h4><p>We believe in quality over quantity. Each piece is crafted with intention and made to stand the test of time.</p></div>
+    <div><h4>STAY CONNECTED</h4><p>Be the first to know about new drops and exclusive releases.</p></div>
+  </footer>
+
+  <script>
+    function unlockSite(){
+      const password = document.getElementById('passwordInput').value;
+      if(password === 'merson'){
+        document.getElementById('passwordGate').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
