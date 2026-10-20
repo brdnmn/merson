@@ -1,257 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your Agency | Social Media Marketing</title>
-<meta name="description" content="Short-form video, content strategy and paid social for brands that are done being ignored.">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#07080c;--paper:#eceff6;--blue:#2447ff;--mute:#8a92a6;--line:rgba(236,239,246,.16);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Merson Media | Retention is revenue.</title><meta name="description" content="Merson Media puts more revenue in the creator’s pocket: short-form systems, compilation channels, channel strategy and high-retention content ops."><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Hanken+Grotesk:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--ink);color:var(--paper);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:40}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:inherit;text-decoration:none}
-main{overflow-x:clip}
-.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase}
-.w{max-width:1240px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:45;background:var(--ink);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
-.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:1.2rem;letter-spacing:-.03em}
-.logo i{width:14px;height:14px;background:var(--blue)}
-.links{display:flex;gap:28px;color:var(--mute)}
-.links a:hover{color:var(--paper)}
-.btn{display:inline-flex;gap:10px;align-items:center;padding:14px 22px;background:var(--blue);color:#fff;font:inherit;font-weight:700;border:2px solid var(--blue);border-radius:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--paper)}
-.btn.o{background:transparent;border-color:var(--line);color:var(--paper)}
-.btn.o:hover{border-color:var(--paper)}
-.hero{padding:54px 0 90px}
-.meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);margin-bottom:34px}
-h1{font-size:clamp(3rem,12vw,11rem);line-height:.84;letter-spacing:-.05em;font-weight:800;margin:0;text-transform:uppercase}
-.ln{display:block;overflow:hidden;padding-bottom:.06em}
-.ln i{display:block;font-style:normal;transform:translateY(106%);animation:up .9s cubic-bezier(.2,.9,.2,1) forwards}
-.ln:nth-child(2) i{animation-delay:.12s}.ln:nth-child(3) i{animation-delay:.24s}
-@keyframes up{to{transform:none}}
-mark{background:var(--blue);color:#fff;padding:0 .1em;display:inline-block;transform:rotate(-1.6deg)}
-.out{color:transparent;-webkit-text-stroke:2px var(--paper)}
-.hrow{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:48px;align-items:end}
-.hrow p{font-size:clamp(1.15rem,2.2vw,1.5rem);max-width:34ch;margin:0 0 26px;line-height:1.35}
-.cta{display:flex;gap:14px;flex-wrap:wrap}
-.hrow aside{color:var(--mute);text-align:right;line-height:2}
-.hrow aside b{color:var(--paper);font-weight:500}
-.tape{background:var(--blue);color:#fff;transform:rotate(-1.4deg);margin:0 -4vw;overflow:hidden;padding:14px 0;border-block:2px solid var(--paper)}
-.track{display:flex;gap:34px;width:max-content;animation:scroll 26s linear infinite;font-weight:800;font-size:1.5rem;text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap}
-@keyframes scroll{to{transform:translateX(-50%)}}
-section{padding:120px 0}
-.sh{display:flex;justify-content:space-between;color:var(--mute);border-top:2px solid var(--paper);padding-top:14px;margin-bottom:34px}
-h2{font-size:clamp(2.3rem,6.2vw,5.4rem);line-height:.94;letter-spacing:-.045em;font-weight:800;margin:0 0 56px;max-width:16ch}
-h2 em{font-style:normal;color:var(--blue)}
-.idx{list-style:none;margin:0;padding:0}
-.idx li{position:relative;display:grid;grid-template-columns:70px 1.1fr 1fr 40px;gap:20px;align-items:center;padding:30px 0;border-top:1px solid var(--line);overflow:hidden;transition:padding .3s}
-.idx li:last-child{border-bottom:1px solid var(--line)}
-.idx li::before{content:"";position:absolute;inset:0;background:var(--blue);transform:scaleY(0);transform-origin:bottom;transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:-1}
-.idx li:hover{padding-left:18px}
-.idx li:hover::before{transform:scaleY(1)}
-.idx h3{margin:0;font-size:clamp(1.7rem,4.2vw,3.2rem);letter-spacing:-.04em;line-height:1}
-.idx p{margin:0;color:var(--mute);transition:color .3s}
-.idx li:hover p{color:#fff}
-.ar{font-size:1.8rem;text-align:right}
-.idx{position:relative;z-index:0}
-.frames{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}
-.fr{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.fr::before{content:"";display:block;height:90px;margin-bottom:20px;background:repeating-linear-gradient(135deg,var(--line) 0 1px,transparent 1px 9px)}
-.fr .mono{color:var(--blue)}
-.fr h3{margin:6px 0;font-size:1.5rem;letter-spacing:-.03em}
-.fr p{margin:0;color:var(--mute)}
-.rec{display:inline-flex;gap:8px;align-items:center;color:var(--mute);margin-bottom:16px}
-.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:#ff3b3b;animation:bl 1.2s steps(1) infinite}
-@keyframes bl{50%{opacity:0}}
-.lab{border:2px solid var(--paper);background:var(--ink)}
-.lh{display:flex;justify-content:space-between;padding:10px 16px;background:var(--paper);color:var(--ink)}
-.lb{padding:26px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
-.chips>span{color:var(--mute);min-width:74px}
-.chip{padding:8px 14px;border:1px solid var(--line);background:transparent;color:var(--mute);font:inherit;font-family:"IBM Plex Mono",monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;border-radius:0}
-.chip:hover{color:var(--paper);border-color:var(--paper)}
-.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-.in{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 8px;align-items:center;border-bottom:2px solid var(--paper)}
-.in label{color:var(--blue)}
-.in input{flex:1;min-width:180px;background:transparent;border:0;color:var(--paper);font:inherit;font-size:1.2rem;padding:12px 0;outline:0}
-.in .btn{margin-bottom:8px}
-.hk{display:grid;grid-template-columns:44px 1fr auto;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);animation:pop .4s both}
-.hk:nth-child(2){animation-delay:.1s}.hk:nth-child(3){animation-delay:.2s}
-@keyframes pop{from{opacity:0;transform:translateX(-14px)}}
-.hk .ix{color:var(--blue);padding-top:5px}
-.hk .t{font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
-.m{height:8px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 11px)}
-.m i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--blue) 0 8px,transparent 8px 11px);transition:width 1s cubic-bezier(.2,.8,.2,1)}
-.ac{display:flex;gap:6px;align-items:flex-start;flex-wrap:wrap;justify-content:flex-end}
-.sc{color:var(--paper);padding:6px 8px 0 0}
-.tb{background:transparent;border:1px solid var(--line);color:var(--paper);padding:5px 9px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-transform:uppercase;cursor:pointer;border-radius:0}
-.tb:hover{border-color:var(--paper)}
-.tb.on{background:var(--paper);color:var(--ink)}
-.tip{color:var(--mute);margin-top:16px}
-#sv h4{margin:26px 0 8px;color:var(--blue)}
-#sv .sv{padding:10px 0;border-bottom:1px solid var(--line)}
-.big{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:60px}
-.big div{border-top:2px solid var(--paper);padding-top:12px}
-.big b{display:block;font-size:clamp(3.6rem,10vw,8.5rem);line-height:.9;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px var(--blue)}
-.big span{color:var(--mute)}
-.case{display:grid;grid-template-columns:130px 1fr 1fr 30px;gap:20px;padding:22px 0;border-top:1px solid var(--line);align-items:baseline}
-.case h3{margin:0;font-size:1.6rem;letter-spacing:-.03em}
-.case p{margin:0;color:var(--mute)}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.ph{aspect-ratio:4/3;background:var(--blue);position:relative;display:flex;align-items:flex-end;padding:0 20px;overflow:hidden;margin-bottom:16px}
-.ph b{font-size:15rem;line-height:.78;font-weight:800;letter-spacing:-.08em;color:var(--ink)}
-.ph .mono{position:absolute;top:14px;left:16px;color:#fff;opacity:.8}
-.pp h3{font-size:2.4rem;letter-spacing:-.04em;margin:0}
-.pp .mono{color:var(--mute)}
-details{border-top:1px solid var(--line);padding:24px 0}
-details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:clamp(1.2rem,2.6vw,1.9rem);font-weight:700;letter-spacing:-.03em}
-summary::after{content:"+";color:var(--blue);font-size:2rem;line-height:1;transition:transform .25s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--mute);margin:14px 0 0;max-width:60ch;font-size:1.1rem}
-.cx h2{max-width:none;font-size:clamp(3rem,11vw,10rem);line-height:.86;text-transform:uppercase}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px;max-width:900px}
-.f2 .full{grid-column:1/-1}
-.f2 input,.f2 select,.f2 textarea{width:100%;background:transparent;border:0;border-bottom:2px solid var(--line);border-radius:0;color:var(--paper);font:inherit;font-size:1.1rem;padding:16px 0;outline:0}
-.f2 input:focus,.f2 select:focus,.f2 textarea:focus{border-bottom-color:var(--blue)}
-.f2 option{background:var(--ink)}
-.f2 .btn{margin-top:16px;justify-self:start}
-footer{overflow:hidden;border-top:1px solid var(--line);padding:30px 0 0;color:var(--mute)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.wm{font-size:clamp(3.5rem,17vw,16rem);font-weight:800;letter-spacing:-.07em;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--line);margin-top:30px;white-space:nowrap;text-transform:uppercase}
-.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
-.js .rv.on{opacity:1;transform:none}
-@media (max-width:820px){.links{display:none}.hrow{grid-template-columns:1fr}.hrow aside{text-align:left}.idx li{grid-template-columns:44px 1fr}.idx li p{grid-column:2}.ar{display:none}.frames{grid-template-columns:1fr 1fr}.duo,.f2,.big{grid-template-columns:1fr}.case{grid-template-columns:1fr;gap:6px}.case .ar{display:none}section{padding:80px 0}.hk{grid-template-columns:30px 1fr}.ac{grid-column:2;justify-content:flex-start}}
-@media (prefers-reduced-motion:reduce){.track,.rec::before{animation:none}.ln i{animation:none;transform:none}.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.hk{animation:none}}
-</style>
-</head>
-<body>
-<header><div class="w"><nav>
-<a href="#top" class="logo"><i></i><span data-brand>Your Agency</span></a>
-<div class="links mono"><a href="#services">(01) Services</a><a href="#process">(02) Process</a><a href="#lab">(03) Hook Lab</a><a href="#work">(04) Work</a></div>
-<a class="btn" href="#contact">Book a call ↗</a>
-</nav></div></header>
-<main id="top">
-<div class="hero"><div class="w">
-<div class="meta mono"><span>(Social media agency)</span><span>Est. 2026</span><span id="clk">Booking open</span></div>
-<h1><span class="ln"><i>We stop</i></span><span class="ln"><i>the <mark>scroll.</mark></i></span><span class="ln"><i class="out">You grow.</i></span></h1>
-<div class="hrow"><div><p>Short-form video, strategy and paid social for brands that are done being ignored.</p>
-<div class="cta"><a class="btn" href="#contact">Book a free call ↗</a><a class="btn o" href="#work">See the work</a></div></div>
-<aside class="mono">Founders<br><b>Brayden + Sam</b><br>Replies within a day</aside></div>
-</div></div>
-<div class="tape" aria-hidden="true"><div class="track"><span>Short-form video ✕ Content strategy ✕ Paid social ✕ Page management ✕ Creator partnerships ✕ </span><span>Short-form video ✕ Content strategy ✕ Paid social ✕ Page management ✕ Creator partnerships ✕ </span></div></div>
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);scrollbar-color:var(--ac) var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.55 var(--bf);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:90}
+::selection{background:var(--ac);color:var(--onac)}
+a{color:inherit;text-underline-offset:.28em;text-decoration-color:var(--ln)}a:hover{text-decoration-color:var(--ac)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--fg);color:var(--bg);padding:8px 14px;z-index:99}.skip:focus{left:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .03em .18em;margin:-.06em -.03em -.18em}.wi{display:inline-block;will-change:transform}
+.ph{outline:1px dashed var(--ac);outline-offset:3px}
+.sec{max-width:1180px;margin:0 auto;padding:18vh clamp(20px,5vw,60px) 0}
+.sec h2{font:var(--hw,400) clamp(2.2rem,5.6vw,4.6rem)/1 var(--hf);letter-spacing:var(--ls,-.02em);text-transform:var(--ht,none);margin:0 0 48px;max-width:14em;text-wrap:balance}
+.tw{overflow-x:auto}table{width:100%;min-width:640px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:400;color:var(--mu);font-size:.9rem;padding:0 16px 14px 0;border-bottom:1px solid var(--fg)}td{padding:20px 16px 20px 0;border-bottom:1px solid var(--ln)}
+.fm{display:grid;grid-template-columns:1fr 1fr;gap:6px 36px;max-width:860px}.fm .f{grid-column:1/-1}
+.fm label{display:block;font-size:.9rem;color:var(--mu);margin-top:22px}
+.fm input,.fm select,.fm textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ln);color:var(--fg);font:inherit;font-size:1.1rem;padding:12px 0;border-radius:0;caret-color:var(--ac);transition:border-color .25s}
+.fm input:focus,.fm select:focus,.fm textarea:focus{outline:0;border-bottom-color:var(--ac)}.fm select option{background:var(--bg);color:var(--fg)}
+.go{margin-top:34px;justify-self:start;padding:15px 28px;background:var(--fg);color:var(--bg);border:0;border-radius:3px;font:600 1rem var(--bf);cursor:pointer;transition:background .25s,color .25s,transform .3s cubic-bezier(.16,1,.3,1)}.go:hover{background:var(--ac);color:var(--onac);transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;padding:14px 24px;background:var(--ac);color:var(--onac);font:600 .98rem var(--bf);text-decoration:none;border-radius:3px;border:1px solid var(--ac);transition:transform .3s cubic-bezier(.16,1,.3,1),background .25s}.btn:hover{transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--fg);border-color:var(--ln)}.btn.g:hover{border-color:var(--fg)}
+.ft{max-width:1180px;margin:0 auto;padding:16vh clamp(20px,5vw,60px) calc(env(safe-area-inset-bottom,0px) + 40px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mu);font-size:.92rem}
+#cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--ac);pointer-events:none;z-index:95;display:none;transition:width .25s,height .25s,margin .25s,background .25s}
+#cur.b{width:46px;height:46px;margin:-23px 0 0 -23px;background:transparent;border:1.5px solid var(--ac)}
+html.cc #cur{display:block}html.cc,html.cc a,html.cc button,html.cc summary{cursor:none}html.cc input,html.cc textarea,html.cc select{cursor:text}
+@media (max-width:820px){.fm{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-<section id="services"><div class="w">
-<div class="sh mono rv"><span>(01) Services</span><span>What we do</span></div>
-<h2 class="rv">Five ways we get you <em>seen.</em></h2>
-<ol class="idx rv">
-<li><span class="mono">01</span><h3>Short-form video</h3><p>Reels, TikToks and Shorts built on hooks that hold attention.</p><span class="ar">↗</span></li>
-<li><span class="mono">02</span><h3>Content strategy</h3><p>A clear plan for what to post and why, based on what’s working in your niche.</p><span class="ar">↗</span></li>
-<li><span class="mono">03</span><h3>Page management</h3><p>We run your accounts end to end, with reporting you can actually read.</p><span class="ar">↗</span></li>
-<li><span class="mono">04</span><h3>Paid social</h3><p>Ad creative and campaigns that turn views into leads and sales.</p><span class="ar">↗</span></li>
-<li><span class="mono">05</span><h3>Creator partnerships</h3><p>Creators whose audiences already trust them, matched to your brand.</p><span class="ar">↗</span></li>
-</ol></div></section>
+:root{--bg:#eceef0;--fg:#0d1015;--mu:#5b6470;--ac:#2432ff;--ln:rgba(13,16,21,.15);--onac:#fff;--hf:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--bf:"Hanken Grotesk",system-ui,sans-serif;--hw:800;--ls:0;--ht:uppercase;--lg:800 1.5rem "Big Shoulders Display","Arial Narrow",sans-serif}
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(20px,5vw,60px)}.logo{text-decoration:none;font:var(--lg)}
+.logo{text-transform:uppercase;letter-spacing:.02em}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(100px,16vh,170px) clamp(20px,6vw,80px) 40vh;overflow:hidden}
+.hero h1{font:800 clamp(3.4rem,13vw,12rem)/.84 var(--hf);text-transform:uppercase;margin:0;letter-spacing:-.005em}
+.h2{font:600 clamp(1.4rem,3.4vw,2.6rem)/1.1 var(--hf);text-transform:uppercase;margin:14px 0 22px;color:var(--ac)}
+.lede{max-width:46ch;font-size:1.15rem;margin:0 0 26px}.cta{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+#hc{position:absolute;left:0;right:0;bottom:0;width:100%;height:46%}
+#hc path{fill:none;vector-effect:non-scaling-stroke}
+#tl{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
+.trk{position:relative;width:560vw;height:100%}
+#cv{position:absolute;left:0;bottom:7vh;width:100%;height:50vh}
+#cv path,#cv line{vector-effect:non-scaling-stroke;fill:none}
+.phd{position:absolute;left:34vw;top:0;bottom:0;border-left:2px solid var(--ac);z-index:5;pointer-events:none}
+.rd{position:absolute;left:calc(34vw + 14px);top:calc(env(safe-area-inset-top,0px) + 82px);z-index:6;display:grid;gap:2px;font:500 .85rem "JetBrains Mono",ui-monospace,monospace;background:var(--bg);padding:8px 12px;border:1px solid var(--ln)}
+.rd b{font-weight:500;color:var(--ac)}
+.yax{position:absolute;left:12px;bottom:7vh;height:50vh;z-index:4;display:flex;flex-direction:column;justify-content:space-between;padding:1.5% 0;font:400 .75rem "JetBrains Mono",monospace;color:var(--mu)}
+.note{position:absolute;right:clamp(16px,3vw,40px);bottom:calc(env(safe-area-inset-bottom,0px) + 14px);margin:0;font-size:.8rem;color:var(--mu);z-index:6}
+.an{position:absolute;top:calc(env(safe-area-inset-top,0px) + 22vh);width:min(380px,76vw);opacity:.18;transition:opacity .6s}.an.on{opacity:1}
+.an::before{content:"";position:absolute;left:-18px;top:6px;width:2px;height:100%;background:var(--ln);transition:background .6s}.an.on::before{background:var(--ac)}
+.an h2{font:800 clamp(2rem,4vw,3.2rem)/.92 var(--hf);text-transform:uppercase;margin:0 0 10px}.an p{margin:0 0 8px;max-width:34ch}
+.an .t{font:500 .8rem "JetBrains Mono",monospace;color:var(--ac)}
+.lst{border-top:1px solid var(--fg)}.lst div{display:grid;grid-template-columns:1fr 1.3fr;gap:20px 50px;padding:30px 0;border-bottom:1px solid var(--ln)}
+.lst h3{font:800 clamp(1.8rem,3.4vw,2.8rem)/.95 var(--hf);text-transform:uppercase;margin:0}.lst p{margin:0;color:var(--mu);max-width:54ch}
+.sec p.big{font:500 clamp(1.3rem,2.6vw,2rem)/1.3 var(--bf);max-width:30em;margin:0}
+@media (max-width:820px){.lst div{grid-template-columns:1fr}.hero{padding-bottom:36vh}.rd{font-size:.72rem}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><div id="cur"></div><header class="nav"><a class="logo" href="#top">Merson Media</a><a class="btn" href="#apply">Apply</a></header><main id="main"><section class="hero" id="top"><svg id="hc" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><path id="hg" stroke="#0d1015" stroke-opacity=".3" stroke-width="2" stroke-dasharray="6 6"/><path id="hp" stroke="#2432ff" stroke-width="4"/></svg>
+<h1 data-k>Retention is revenue.</h1><p class="h2">We build the channels that hold it.</p><p class="lede">Merson Media runs short-form systems, compilation channels, channel strategy and high-retention content ops, tuned to one outcome: more of the money lands in the creator’s pocket.</p><div class="cta"><a class="btn" href="#apply">Apply to work with us</a><a class="btn g" href="#tl">Follow the curve</a></div></section>
+<section id="tl" aria-label="How each Merson system fixes a drop in audience retention"><div class="yax" aria-hidden="true"><span>100%</span><span>50%</span><span>0%</span></div><div class="phd" aria-hidden="true"></div><div class="rd" aria-hidden="true"><span id="tc">0:00</span><span>typical <b id="tv">100%</b></span><span>with Merson <b id="mv">100%</b></span></div><p class="note">Illustrative curves. Real client retention graphs go here.</p>
+<div class="trk" id="trk"><svg id="cv" viewBox="0 0 5600 600" preserveAspectRatio="none" aria-hidden="true"><defs><clipPath id="clp"><rect id="clr" x="0" y="0" width="0" height="600"/></clipPath></defs><g stroke="#0d1015" stroke-opacity=".14"><line x1="0" x2="5600" y1="30" y2="30"/><line x1="0" x2="5600" y1="300" y2="300"/><line x1="0" x2="5600" y1="570" y2="570"/></g><g clip-path="url(#clp)"><path id="gap" fill="rgba(36,50,255,.16)" stroke="none"/><path id="ty" stroke="#0d1015" stroke-opacity=".5" stroke-width="2.5" stroke-dasharray="7 7"/><path id="mr" stroke="#2432ff" stroke-width="4.5"/></g></svg>
+<article class="an" style="left:8vw"><h2>The hook</h2><p>We test openings on Shorts first, then bring the winners to long-form.</p><span class="t">0:00 / short-form content systems</span></article>
+<article class="an" style="left:150vw"><h2>The cold spot</h2><p>Editing SOPs that re-hook the viewer before the dip, on every upload.</p><span class="t">0:20 / high-retention content ops</span></article>
+<article class="an" style="left:250vw"><h2>The drop-off</h2><p>Packaging and structure rebuilt against your actual retention graph.</p><span class="t">0:50 / channel strategy</span></article>
+<article class="an" style="left:350vw"><h2>The second life</h2><p>Your catalog becomes a second channel that earns while the main one rests.</p><span class="t">1:30 / compilation channels</span></article>
+<article class="an" style="left:455vw"><h2>The payout</h2><p>The gap between the lines is your money. Growth systems keep it widening.</p><span class="t">2:30 / YouTube growth systems</span></article></div></section>
+<section class="sec"><h2 data-k>What we run.</h2><div class="lst"><div><h3>Short-form content systems</h3><p>A daily Shorts engine fed by your long-form, tested before anything gets a big push.</p></div><div><h3>Compilation channels</h3><p>We build and run compilation channels from your catalog and cleared clips.</p></div><div><h3>Channel strategy</h3><p>Positioning, packaging and cadence, set against RPM and retention.</p></div><div><h3>YouTube growth systems</h3><p>The funnel from Shorts to long-form to monetization, wired end to end.</p></div><div><h3>High-retention content ops</h3><p>Editing SOPs, QA and retention reviews, so quality holds as volume climbs.</p></div></div></section>
+<section class="sec"><h2 data-k>We win when you do.</h2><p class="big">Our pay is tied to what we put in your pocket. <span class="ph">[Revenue share and retainer terms go here.]</span></p></section><section class="sec"><h2 data-k>Receipts.</h2><div class="tw"><table><thead><tr><th>Creator</th><th>Window</th><th>Revenue before</th><th>Revenue after</th><th>What we changed</th></tr></thead><tbody><tr><td><span class="ph">[Creator]</span></td><td><span class="ph">[90 days]</span></td><td><span class="ph">[$ before]</span></td><td><span class="ph">[$ after]</span></td><td><span class="ph">[One line]</span></td></tr><tr><td><span class="ph">[Creator]</span></td><td><span class="ph">[90 days]</span></td><td><span class="ph">[$ before]</span></td><td><span class="ph">[$ after]</span></td><td><span class="ph">[One line]</span></td></tr></tbody></table></div></section><section class="sec" id="apply"><h2 data-k>Send us the channel.</h2><form class="fm" id="f"><div><label for="a1">Your channel link</label><input id="a1" name="ch" required></div><div><label for="a2">Your email</label><input id="a2" name="email" type="email" required autocomplete="email"></div><div><label for="a3">Monthly channel revenue</label><select id="a3" name="rev"><option>Under $5k</option><option>$5k to $25k</option><option>$25k to $100k</option><option>$100k+</option></select></div><div><label for="a4">Main thing you want fixed</label><input id="a4" name="fx"></div><div class="f"><label for="a5">Anything else we should know?</label><textarea id="a5" name="msg" rows="3"></textarea></div><button class="go" type="submit">Send application</button></form></section><footer class="ft"><span>© <span id="yr"></span> Merson Media</span><span>We reply within a day.</span></footer></main><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script><script>
+if(window.gsap&&window.ScrollTrigger){
+gsap.registerPlugin(ScrollTrigger);
+var EMAIL='hello@mersonmedia.com',rm=matchMedia('(prefers-reduced-motion:reduce)').matches,$=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))},lenis,mx=innerWidth/2,my=innerHeight/2;
+addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY});
+$$('[data-k]').forEach(function(el){var t=el.textContent.trim();el.setAttribute('aria-label',t);el.innerHTML=t.split(/\s+/).map(function(w){return '<span class="wd" aria-hidden="true"><span class="wi">'+w+'</span></span>'}).join(' ')});
+if(!rm){lenis=new Lenis({lerp:.085});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0)}
+$$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=$(a.getAttribute('href'));if(t&&lenis){e.preventDefault();lenis.scrollTo(t)}})});
+if(!rm)$$('.sec [data-k]').forEach(function(h){gsap.from(h.querySelectorAll('.wi'),{yPercent:110,duration:1.1,ease:'expo.out',stagger:.05,scrollTrigger:{trigger:h,start:'top 88%',once:true}})});
+$('#yr').textContent=new Date().getFullYear();
+var cur=$('#cur');if(cur&&matchMedia('(pointer:fine)').matches&&!rm){document.documentElement.classList.add('cc');var px=mx,py=my;gsap.ticker.add(function(){px+=(mx-px)*.25;py+=(my-py)*.25;cur.style.transform='translate('+px+'px,'+py+'px)'});document.addEventListener('pointerover',function(e){cur.classList.toggle('b',!!e.target.closest('a,button,summary,.tile'))})}
+$('#f').addEventListener('submit',function(e){e.preventDefault();var d=new FormData(e.target),b='Channel: '+d.get('ch')+'\nEmail: '+d.get('email')+'\nMonthly revenue: '+d.get('rev')+'\n\n'+d.get('msg');location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Application: '+d.get('ch'))+'&body='+encodeURIComponent(b)});
 
-<section id="process"><div class="w">
-<div class="sh mono rv"><span>(02) Process</span><span>Four frames</span></div>
-<h2 class="rv">Our process runs like a <em>30-second cut.</em></h2>
-<div class="rec mono rv">Rec</div>
-<div class="frames rv">
-<div class="fr"><span class="mono">00:00</span><h3>Discovery</h3><p>We learn your brand, goals and audience.</p></div>
-<div class="fr"><span class="mono">00:08</span><h3>Strategy</h3><p>We map the content, offers and angles to win.</p></div>
-<div class="fr"><span class="mono">00:18</span><h3>Create + launch</h3><p>We produce, post and promote, consistently.</p></div>
-<div class="fr"><span class="mono">00:30</span><h3>Scale</h3><p>We double down on what hits and cut what doesn’t.</p></div>
-</div></div></section>
+var X=5600,Y=570;
+function typ(x){var u=x/X,v=100*(.12+.88*Math.exp(-u*5.2));[.13,.27,.45,.62,.83].forEach(function(c){v-=7*(1/(1+Math.exp(-(u-c)*90)))*Math.exp(-(u-c)*3)});return Math.max(4,v)}
+function mer(x){var u=x/X,v=100*(.34+.66*Math.exp(-u*1.7));[.13,.27,.45,.62,.83].forEach(function(c){v+=3.2*Math.exp(-Math.pow((u-c)/.012,2))});return Math.min(100,v)}
+function yy(v){return (Y-v*5.4).toFixed(1)}
+var dT='',dM='',dG='',x;for(x=0;x<=X;x+=10){dT+=(x?'L':'M')+x+' '+yy(typ(x));dM+=(x?'L':'M')+x+' '+yy(mer(x))}
+dG=dM;for(x=X;x>=0;x-=10)dG+='L'+x+' '+yy(typ(x));dG+='Z';
+$('#ty').setAttribute('d',dT);$('#mr').setAttribute('d',dM);$('#gap').setAttribute('d',dG);
+var hp=$('#hp'),hg=$('#hg'),HN=64;
+function hd(w){var d='',w0=1000,h=300;for(var i=0;i<=HN;i++){var u=i/HN,v=.14+.86*Math.exp(-u*3.4),y=h-30-v*(h-70);if(w){var dx=u-mx/innerWidth;y-=Math.exp(-dx*dx*28)*(1-my/innerHeight)*80}d+=(i?'L':'M')+(u*w0).toFixed(1)+' '+y.toFixed(1)}return d}
+hg.setAttribute('d',hd(0));gsap.ticker.add(function(){hp.setAttribute('d',hd(1))});
+var trk=$('#trk'),clr=$('#clr'),an=$$('.an'),tv=$('#tv'),mv=$('#mv'),tc=$('#tc');
+function fmt(s){s=Math.round(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function upd(p){var tw=trk.scrollWidth,sx=p*(tw-innerWidth),phx=sx+innerWidth*.34,vx=phx/tw*X;clr.setAttribute('width',vx);tv.textContent=Math.round(typ(vx))+'%';mv.textContent=Math.round(mer(vx))+'%';tc.textContent=fmt(p*185);an.forEach(function(a){a.classList.toggle('on',phx>a.offsetLeft)})}
+if(rm){clr.setAttribute('width',X);an.forEach(function(a){a.classList.add('on');a.style.position='static';a.style.opacity=1});$('.trk').style.width='100%';$('.trk').style.height='auto';$('#tl').style.height='auto';$('#cv').style.position='static';$('#cv').style.height='36vh'}
+else{gsap.from('.hero h1 .wi',{yPercent:110,duration:1.3,ease:'expo.out',stagger:.08,delay:.1});gsap.from(['.h2','.lede','.cta'],{opacity:0,y:20,duration:1,ease:'expo.out',stagger:.12,delay:.6});
+gsap.to(trk,{x:function(){return -(trk.scrollWidth-innerWidth)},ease:'none',scrollTrigger:{trigger:'#tl',start:'top top',end:function(){return '+='+(trk.scrollWidth-innerWidth)},pin:true,scrub:1,invalidateOnRefresh:true,onUpdate:function(s){upd(s.progress)}}});upd(0)}
 
-<section id="lab"><div class="w">
-<div class="sh mono rv"><span>(03) Hook Lab</span><span>Free tool</span></div>
-<h2 class="rv">Steal our <em>opening lines.</em></h2>
-<div class="lab rv">
-<div class="lh mono"><span>Hook_Lab v1.0</span><span>● live</span></div>
-<div class="lb">
-<div class="chips" data-g="plat"><span class="mono">Platform</span><button type="button" class="chip on">TikTok</button><button type="button" class="chip">Reels</button><button type="button" class="chip">Shorts</button></div>
-<div class="chips" data-g="vibe"><span class="mono">Vibe</span><button type="button" class="chip on">Shock</button><button type="button" class="chip">Curiosity</button><button type="button" class="chip">Story</button><button type="button" class="chip">Spicy</button></div>
-<div class="in"><label class="mono" for="hx">&gt; Niche</label><input id="hx" placeholder="coffee shop, gym, skincare" autocomplete="off"><button class="btn" id="hb" type="button">Generate ↗</button></div>
-<div id="hg"></div><div id="sv"></div>
-</div></div></div></section>
-
-<section id="work"><div class="w">
-<div class="sh mono rv"><span>(04) Work</span><span>Results</span></div>
-<h2 class="rv">Receipts, <em>not promises.</em></h2>
-<!-- REPLACE the XX placeholders with your real numbers and case studies -->
-<div class="big rv"><div><b>XXM</b><span class="mono">Views generated</span></div><div><b>XX+</b><span class="mono">Clients grown</span></div><div><b>XX%</b><span class="mono">Avg. engagement lift</span></div></div>
-<div class="rv">
-<div class="case"><span class="mono">Case study</span><h3>Client name</h3><p>Add a short result: followers, views, leads or revenue in a set time.</p><span class="ar">↗</span></div>
-<div class="case"><span class="mono">Case study</span><h3>Client name</h3><p>Add a short result: followers, views, leads or revenue in a set time.</p><span class="ar">↗</span></div>
-<div class="case"><span class="mono">Testimonial</span><h3>“Add a client quote.”</h3><p>Client name, company</p><span class="ar">↗</span></div>
-</div></div></section>
-
-<section><div class="w">
-<div class="sh mono rv"><span>(05) People</span><span>Founder-led</span></div>
-<h2 class="rv">Two founders. <em>No middlemen.</em></h2>
-<div class="duo rv">
-<div class="pp"><div class="ph"><span class="mono">Swap in photo</span><b>B</b></div><h3>Brayden</h3><span class="mono">Co-founder / Creator + strategy</span></div>
-<div class="pp"><div class="ph"><span class="mono">Swap in photo</span><b>S</b></div><h3>Sam</h3><span class="mono">Co-founder / Growth + clients</span></div>
-</div></div></section>
-
-<section id="faq"><div class="w" style="max-width:900px">
-<div class="sh mono rv"><span>(06) FAQ</span><span>Quick answers</span></div>
-<div class="rv">
-<details><summary>Who do you work with?</summary><p>Brands, local businesses and creators who want to grow on social and turn attention into revenue.</p></details>
-<details><summary>How fast will I see results?</summary><p>Most clients see momentum within the first few weeks of consistent posting. Bigger gains build as we learn what works for your audience.</p></details>
-<details><summary>What does it cost?</summary><p>It depends on the services and volume you need. Book a free call and we’ll give you a clear quote.</p></details>
-<details><summary>Do I need to be on camera?</summary><p>No. We can build content around your product, your story, or faceless formats.</p></details>
-</div></div></section>
-
-<section id="contact" class="cx"><div class="w">
-<div class="sh mono rv"><span>(07) Contact</span><span>Free strategy call</span></div>
-<h2 class="rv">Let’s make <em>noise.</em></h2>
-<form id="f" class="f2 rv">
-<input name="name" placeholder="Your name" required>
-<input name="email" type="email" placeholder="Email" required>
-<input name="brand" placeholder="Brand or page link">
-<select name="need"><option>Short-form video</option><option>Content strategy</option><option>Page management</option><option>Paid social</option><option>Not sure yet</option></select>
-<textarea class="full" name="msg" rows="2" placeholder="What are your goals?"></textarea>
-<button class="btn" type="submit">Send it ↗</button>
-</form></div></section>
-</main>
-<footer><div class="w"><div class="row mono"><span>© <span id="yr"></span> <span data-brand>Your Agency</span></span><a href="#top">Back to top ↑</a></div></div><div class="wm" data-brand>Your Agency</div></footer>
-
-<script>
-document.documentElement.classList.add('js');
-// CHANGE THESE: your agency name and the email that receives form submissions
-var BRAND='Your Agency', EMAIL='hello@youragency.com';
-document.querySelectorAll('[data-brand]').forEach(function(e){e.textContent=BRAND});
-document.title=BRAND+' | Social Media Marketing';
-document.getElementById('yr').textContent=new Date().getFullYear();
-var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-var els=document.querySelectorAll('.rv');
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('on')})}
-var clk=document.getElementById('clk');
-function tk(){clk.textContent='Booking open · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}tk();setInterval(tk,30000);
-/* Hook Lab */
-var HK={shock:['Stop scrolling if you own a {x}.','Nobody in the {x} world will tell you this.','This {x} mistake costs people thousands.','I can’t believe more {x} brands skip this.'],curiosity:['You guys remember when every {x} did this? Watch.','The {x} secret nobody talks about.','Wait for the end. This {x} trick is wild.','I tested this {x} idea so you don’t have to.'],story:['I posted about my {x} for 30 days. Here’s what happened.','POV: your {x} just went viral.','A year ago my {x} had zero views. Look at it now.','Day 1 of turning a {x} into a brand.'],spicy:['Unpopular opinion: most {x} content is boring.','Your {x} page is invisible and here’s why.','Stop posting like a {x}. Do this instead.','{x} owners hate this one rule.']};
-var TIP={TikTok:'Put the hook in on-screen text too, not just your voice.',Reels:'Add on-screen text in the first second.',Shorts:'Loop your ending back into the hook.'};
-var saved=[],sel={plat:'TikTok',vibe:'Shock'},hg=document.getElementById('hg'),sv=document.getElementById('sv');
-document.querySelectorAll('.chips').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on')});b.classList.add('on');sel[g.dataset.g]=b.textContent;gen()})});
-function score(t){var s=58+Math.floor(Math.random()*10);if(/\d/.test(t))s+=8;if(/\?/.test(t))s+=6;if(/secret|nobody|wait|stop|mistake|wild|unpopular|hate|can’t believe/i.test(t))s+=12;if(t.length<55)s+=6;return Math.min(99,s)}
-function decode(el,txt){if(rm){el.textContent=txt;return}var n=0,ch='!<>-_/[]{}=+*^?#',id=setInterval(function(){n+=2;el.textContent=txt.split('').map(function(c,i){return i<n||c===' '?c:ch[Math.floor(Math.random()*ch.length)]}).join('');if(n>=txt.length){clearInterval(id);el.textContent=txt}},24)}
-function cp(b,t){try{navigator.clipboard.writeText(t)}catch(e){}var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1200)}
-function nx(){return(document.getElementById('hx').value.trim()||'brand').slice(0,40)}
-function pick(x){var a=HK[sel.vibe.toLowerCase()];return a[Math.floor(Math.random()*a.length)].replace('{x}',x)}
-function fill(d,txt){var s=score(txt),i=d.querySelector('.m i'),st=d.querySelector('.st');decode(d.querySelector('.t'),txt);i.style.width='0';setTimeout(function(){i.style.width=s+'%'},60);d.querySelector('.sc').textContent=s+'/100';st.textContent='Save';st.classList.remove('on')}
-function card(txt,n){var d=document.createElement('div');d.className='hk';d.innerHTML='<span class="mono ix">0'+n+'</span><div><div class="t"></div><div class="m"><i></i></div></div><div class="ac"><b class="mono sc"></b><button type="button" class="tb re">Reroll</button><button type="button" class="tb st">Save</button><button type="button" class="tb cp">Copy</button></div>';fill(d,txt);d.querySelector('.re').onclick=function(){fill(d,pick(nx()))};d.querySelector('.st').onclick=function(){var t=d.querySelector('.t').textContent,k=saved.indexOf(t);if(k<0){saved.push(t);this.textContent='Saved';this.classList.add('on')}else{saved.splice(k,1);this.textContent='Save';this.classList.remove('on')}drawSaved()};d.querySelector('.cp').onclick=function(){cp(this,d.querySelector('.t').textContent)};return d}
-function drawSaved(){sv.innerHTML='';if(!saved.length)return;var h=document.createElement('h4');h.className='mono';h.textContent='Saved hooks ('+saved.length+')';sv.appendChild(h);saved.forEach(function(t){var p=document.createElement('div');p.className='sv';p.textContent=t;sv.appendChild(p)});var b=document.createElement('button');b.type='button';b.className='btn';b.style.marginTop='16px';b.textContent='Copy all';b.onclick=function(){cp(b,saved.join('\n'))};sv.appendChild(b)}
-function gen(){var x=nx(),seen={},out=[];while(out.length<3){var t=pick(x);if(!seen[t]){seen[t]=1;out.push(t)}}hg.innerHTML='';out.forEach(function(t,i){hg.appendChild(card(t,i+1))});var tp=document.createElement('div');tp.className='tip mono';tp.textContent=sel.plat+' tip: '+TIP[sel.plat]+' · Strength is a rule-based score, not a prediction.';hg.appendChild(tp)}
-document.getElementById('hb').addEventListener('click',gen);
-document.getElementById('hx').addEventListener('keydown',function(e){if(e.key==='Enter')gen()});
-gen();
-document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var d=new FormData(ev.target);var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nBrand: '+d.get('brand')+'\nInterested in: '+d.get('need')+'\n\n'+d.get('msg');window.location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('New inquiry from '+d.get('name'))+'&body='+encodeURIComponent(body)});
-</script>
-</body>
-</html>
+}</script></body></html>
