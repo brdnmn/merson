@@ -1,109 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="favicon.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Merson</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:Georgia,serif;background:#f7f5f1;color:#111}
-    a{text-decoration:none;color:inherit}
-    .password-gate{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:1000;animation:fadeGate .8s ease forwards}
-    .gate-box{background:rgba(255,255,255,.06);backdrop-filter:blur(20px);padding:40px;border-radius:24px;border:1px solid rgba(255,255,255,.1);text-align:center;color:#fff;width:90%;max-width:420px;animation:gatePop .9s cubic-bezier(.22,1,.36,1)}
-    .gate-box img{width:90px;filter:brightness(8) contrast(10) invert;margin-bottom:20px}
-    .gate-box input{width:100%;padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;margin:16px 0;font-size:16px}
-    .gate-box button{width:100%;padding:14px;border:none;border-radius:999px;background:#fff;color:#000;cursor:pointer}
-    header{display:flex;justify-content:space-between;align-items:center;padding:28px 60px;letter-spacing:.25em;text-transform:uppercase;font-size:12px}
-    nav{display:flex;gap:28px}
-    .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:50px 60px;align-items:center}
-    .hero-left{display:flex;align-items:center;gap:40px}
-    .hero-left img{width:160px}
-    .divider{width:1px;height:180px;background:rgba(0,0,0,.15)}
-    .hero-copy h2{font-size:48px;letter-spacing:.15em;margin-bottom:20px}
-    .hero-copy p{font-size:18px;color:#555;max-width:420px;margin-bottom:24px}
-    .hero-right img{width:100%;border-radius:18px;filter:blur(10px) brightness(.95);transform:scale(1.03)}
-    .products{padding:40px 60px}
-    .products h3{text-align:center;letter-spacing:.35em;text-transform:uppercase;margin-bottom:30px}
-    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-    .card{background:#fff;padding:14px;border-radius:14px;text-align:center;overflow:hidden}
-    .card img{width:100%;height:220px;object-fit:cover;filter:blur(8px) brightness(.96);transform:scale(1.04);transition:all .4s ease}
-    .card h4{margin-top:14px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-    .card p{font-size:11px;color:#777;text-transform:uppercase;margin-top:4px}
-    footer{background:#050505;color:#fff;padding:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px}
-    @keyframes fadeGate{from{opacity:0}to{opacity:1}}
-    @keyframes gatePop{0%{opacity:0;transform:translateY(30px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
-    @keyframes gateExit{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.04)}}
-
-    @media(max-width:1000px){.hero{grid-template-columns:1fr;padding:32px 20px}.hero-left{flex-direction:column;gap:24px;text-align:center}.hero-left img{width:120px}.divider{display:none}.hero-copy h2{font-size:32px}.hero-copy p{font-size:16px;margin:0 auto 20px}.grid{grid-template-columns:repeat(2,1fr);gap:14px}.card img{height:180px}footer{grid-template-columns:1fr;padding:40px 20px}header{padding:20px;flex-direction:column;gap:16px;text-align:center}}@media(max-width:640px){body{overflow-x:hidden;width:100%}header nav{gap:16px;flex-wrap:wrap;justify-content:center}.hero-copy h2{font-size:26px;letter-spacing:.08em}.hero-copy p{font-size:15px}.products{padding:30px 16px}.grid{grid-template-columns:1fr 1fr}.card{padding:10px}.card img{height:140px}.gate-box{padding:28px 20px}.gate-box img{width:72px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Agency | Social Media Marketing</title>
+<meta name="description" content="Short-form video, content strategy and paid social for brands that are done being ignored.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#07080c;--paper:#eceff6;--blue:#2447ff;--mute:#8a92a6;--line:rgba(236,239,246,.16);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:40}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+main{overflow-x:clip}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase}
+.w{max-width:1240px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:45;background:var(--ink);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:1.2rem;letter-spacing:-.03em}
+.logo i{width:14px;height:14px;background:var(--blue)}
+.links{display:flex;gap:28px;color:var(--mute)}
+.links a:hover{color:var(--paper)}
+.btn{display:inline-flex;gap:10px;align-items:center;padding:14px 22px;background:var(--blue);color:#fff;font:inherit;font-weight:700;border:2px solid var(--blue);border-radius:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--paper)}
+.btn.o{background:transparent;border-color:var(--line);color:var(--paper)}
+.btn.o:hover{border-color:var(--paper)}
+.hero{padding:54px 0 90px}
+.meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);margin-bottom:34px}
+h1{font-size:clamp(3rem,12vw,11rem);line-height:.84;letter-spacing:-.05em;font-weight:800;margin:0;text-transform:uppercase}
+.ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ln i{display:block;font-style:normal;transform:translateY(106%);animation:up .9s cubic-bezier(.2,.9,.2,1) forwards}
+.ln:nth-child(2) i{animation-delay:.12s}.ln:nth-child(3) i{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+mark{background:var(--blue);color:#fff;padding:0 .1em;display:inline-block;transform:rotate(-1.6deg)}
+.out{color:transparent;-webkit-text-stroke:2px var(--paper)}
+.hrow{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:48px;align-items:end}
+.hrow p{font-size:clamp(1.15rem,2.2vw,1.5rem);max-width:34ch;margin:0 0 26px;line-height:1.35}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hrow aside{color:var(--mute);text-align:right;line-height:2}
+.hrow aside b{color:var(--paper);font-weight:500}
+.tape{background:var(--blue);color:#fff;transform:rotate(-1.4deg);margin:0 -4vw;overflow:hidden;padding:14px 0;border-block:2px solid var(--paper)}
+.track{display:flex;gap:34px;width:max-content;animation:scroll 26s linear infinite;font-weight:800;font-size:1.5rem;text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap}
+@keyframes scroll{to{transform:translateX(-50%)}}
+section{padding:120px 0}
+.sh{display:flex;justify-content:space-between;color:var(--mute);border-top:2px solid var(--paper);padding-top:14px;margin-bottom:34px}
+h2{font-size:clamp(2.3rem,6.2vw,5.4rem);line-height:.94;letter-spacing:-.045em;font-weight:800;margin:0 0 56px;max-width:16ch}
+h2 em{font-style:normal;color:var(--blue)}
+.idx{list-style:none;margin:0;padding:0}
+.idx li{position:relative;display:grid;grid-template-columns:70px 1.1fr 1fr 40px;gap:20px;align-items:center;padding:30px 0;border-top:1px solid var(--line);overflow:hidden;transition:padding .3s}
+.idx li:last-child{border-bottom:1px solid var(--line)}
+.idx li::before{content:"";position:absolute;inset:0;background:var(--blue);transform:scaleY(0);transform-origin:bottom;transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.idx li:hover{padding-left:18px}
+.idx li:hover::before{transform:scaleY(1)}
+.idx h3{margin:0;font-size:clamp(1.7rem,4.2vw,3.2rem);letter-spacing:-.04em;line-height:1}
+.idx p{margin:0;color:var(--mute);transition:color .3s}
+.idx li:hover p{color:#fff}
+.ar{font-size:1.8rem;text-align:right}
+.idx{position:relative;z-index:0}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.fr{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fr::before{content:"";display:block;height:90px;margin-bottom:20px;background:repeating-linear-gradient(135deg,var(--line) 0 1px,transparent 1px 9px)}
+.fr .mono{color:var(--blue)}
+.fr h3{margin:6px 0;font-size:1.5rem;letter-spacing:-.03em}
+.fr p{margin:0;color:var(--mute)}
+.rec{display:inline-flex;gap:8px;align-items:center;color:var(--mute);margin-bottom:16px}
+.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:#ff3b3b;animation:bl 1.2s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lab{border:2px solid var(--paper);background:var(--ink)}
+.lh{display:flex;justify-content:space-between;padding:10px 16px;background:var(--paper);color:var(--ink)}
+.lb{padding:26px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.chips>span{color:var(--mute);min-width:74px}
+.chip{padding:8px 14px;border:1px solid var(--line);background:transparent;color:var(--mute);font:inherit;font-family:"IBM Plex Mono",monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;border-radius:0}
+.chip:hover{color:var(--paper);border-color:var(--paper)}
+.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.in{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 8px;align-items:center;border-bottom:2px solid var(--paper)}
+.in label{color:var(--blue)}
+.in input{flex:1;min-width:180px;background:transparent;border:0;color:var(--paper);font:inherit;font-size:1.2rem;padding:12px 0;outline:0}
+.in .btn{margin-bottom:8px}
+.hk{display:grid;grid-template-columns:44px 1fr auto;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);animation:pop .4s both}
+.hk:nth-child(2){animation-delay:.1s}.hk:nth-child(3){animation-delay:.2s}
+@keyframes pop{from{opacity:0;transform:translateX(-14px)}}
+.hk .ix{color:var(--blue);padding-top:5px}
+.hk .t{font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.m{height:8px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 11px)}
+.m i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--blue) 0 8px,transparent 8px 11px);transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.ac{display:flex;gap:6px;align-items:flex-start;flex-wrap:wrap;justify-content:flex-end}
+.sc{color:var(--paper);padding:6px 8px 0 0}
+.tb{background:transparent;border:1px solid var(--line);color:var(--paper);padding:5px 9px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-transform:uppercase;cursor:pointer;border-radius:0}
+.tb:hover{border-color:var(--paper)}
+.tb.on{background:var(--paper);color:var(--ink)}
+.tip{color:var(--mute);margin-top:16px}
+#sv h4{margin:26px 0 8px;color:var(--blue)}
+#sv .sv{padding:10px 0;border-bottom:1px solid var(--line)}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:60px}
+.big div{border-top:2px solid var(--paper);padding-top:12px}
+.big b{display:block;font-size:clamp(3.6rem,10vw,8.5rem);line-height:.9;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px var(--blue)}
+.big span{color:var(--mute)}
+.case{display:grid;grid-template-columns:130px 1fr 1fr 30px;gap:20px;padding:22px 0;border-top:1px solid var(--line);align-items:baseline}
+.case h3{margin:0;font-size:1.6rem;letter-spacing:-.03em}
+.case p{margin:0;color:var(--mute)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.ph{aspect-ratio:4/3;background:var(--blue);position:relative;display:flex;align-items:flex-end;padding:0 20px;overflow:hidden;margin-bottom:16px}
+.ph b{font-size:15rem;line-height:.78;font-weight:800;letter-spacing:-.08em;color:var(--ink)}
+.ph .mono{position:absolute;top:14px;left:16px;color:#fff;opacity:.8}
+.pp h3{font-size:2.4rem;letter-spacing:-.04em;margin:0}
+.pp .mono{color:var(--mute)}
+details{border-top:1px solid var(--line);padding:24px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:clamp(1.2rem,2.6vw,1.9rem);font-weight:700;letter-spacing:-.03em}
+summary::after{content:"+";color:var(--blue);font-size:2rem;line-height:1;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mute);margin:14px 0 0;max-width:60ch;font-size:1.1rem}
+.cx h2{max-width:none;font-size:clamp(3rem,11vw,10rem);line-height:.86;text-transform:uppercase}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px;max-width:900px}
+.f2 .full{grid-column:1/-1}
+.f2 input,.f2 select,.f2 textarea{width:100%;background:transparent;border:0;border-bottom:2px solid var(--line);border-radius:0;color:var(--paper);font:inherit;font-size:1.1rem;padding:16px 0;outline:0}
+.f2 input:focus,.f2 select:focus,.f2 textarea:focus{border-bottom-color:var(--blue)}
+.f2 option{background:var(--ink)}
+.f2 .btn{margin-top:16px;justify-self:start}
+footer{overflow:hidden;border-top:1px solid var(--line);padding:30px 0 0;color:var(--mute)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wm{font-size:clamp(3.5rem,17vw,16rem);font-weight:800;letter-spacing:-.07em;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--line);margin-top:30px;white-space:nowrap;text-transform:uppercase}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.js .rv.on{opacity:1;transform:none}
+@media (max-width:820px){.links{display:none}.hrow{grid-template-columns:1fr}.hrow aside{text-align:left}.idx li{grid-template-columns:44px 1fr}.idx li p{grid-column:2}.ar{display:none}.frames{grid-template-columns:1fr 1fr}.duo,.f2,.big{grid-template-columns:1fr}.case{grid-template-columns:1fr;gap:6px}.case .ar{display:none}section{padding:80px 0}.hk{grid-template-columns:30px 1fr}.ac{grid-column:2;justify-content:flex-start}}
+@media (prefers-reduced-motion:reduce){.track,.rec::before{animation:none}.ln i{animation:none;transform:none}.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.hk{animation:none}}
+</style>
 </head>
 <body>
-  <div class="password-gate" id="passwordGate">
-    <div class="gate-box">
-      <img src="logo.png" alt="Merson Logo">
-      <h2>PRIVATE ACCESS</h2>
-      <p>Enter password to access the Merson showroom.</p>
-      <input type="password" id="passwordInput" placeholder="Password">
-      <button onclick="unlockSite()">Enter Showroom</button>
-    </div>
-  </div>
+<header><div class="w"><nav>
+<a href="#top" class="logo"><i></i><span data-brand>Your Agency</span></a>
+<div class="links mono"><a href="#services">(01) Services</a><a href="#process">(02) Process</a><a href="#lab">(03) Hook Lab</a><a href="#work">(04) Work</a></div>
+<a class="btn" href="#contact">Book a call ↗</a>
+</nav></div></header>
+<main id="top">
+<div class="hero"><div class="w">
+<div class="meta mono"><span>(Social media agency)</span><span>Est. 2026</span><span id="clk">Booking open</span></div>
+<h1><span class="ln"><i>We stop</i></span><span class="ln"><i>the <mark>scroll.</mark></i></span><span class="ln"><i class="out">You grow.</i></span></h1>
+<div class="hrow"><div><p>Short-form video, strategy and paid social for brands that are done being ignored.</p>
+<div class="cta"><a class="btn" href="#contact">Book a free call ↗</a><a class="btn o" href="#work">See the work</a></div></div>
+<aside class="mono">Founders<br><b>Brayden + Sam</b><br>Replies within a day</aside></div>
+</div></div>
+<div class="tape" aria-hidden="true"><div class="track"><span>Short-form video ✕ Content strategy ✕ Paid social ✕ Page management ✕ Creator partnerships ✕ </span><span>Short-form video ✕ Content strategy ✕ Paid social ✕ Page management ✕ Creator partnerships ✕ </span></div></div>
 
-  <header>
-    <nav><a href="#">Home</a><a href="#">Collection</a><a href="#">About</a></nav>
-    <h1>MERSON</h1>
-    <nav><a href="#">Contact</a><a href="#">Bag (0)</a></nav>
-  </header>
+<section id="services"><div class="w">
+<div class="sh mono rv"><span>(01) Services</span><span>What we do</span></div>
+<h2 class="rv">Five ways we get you <em>seen.</em></h2>
+<ol class="idx rv">
+<li><span class="mono">01</span><h3>Short-form video</h3><p>Reels, TikToks and Shorts built on hooks that hold attention.</p><span class="ar">↗</span></li>
+<li><span class="mono">02</span><h3>Content strategy</h3><p>A clear plan for what to post and why, based on what’s working in your niche.</p><span class="ar">↗</span></li>
+<li><span class="mono">03</span><h3>Page management</h3><p>We run your accounts end to end, with reporting you can actually read.</p><span class="ar">↗</span></li>
+<li><span class="mono">04</span><h3>Paid social</h3><p>Ad creative and campaigns that turn views into leads and sales.</p><span class="ar">↗</span></li>
+<li><span class="mono">05</span><h3>Creator partnerships</h3><p>Creators whose audiences already trust them, matched to your brand.</p><span class="ar">↗</span></li>
+</ol></div></section>
 
-  <section class="hero">
-    <div class="hero-left">
-      <img src="black-logo.png" alt="Logo">
-      <div class="divider"></div>
-      <div class="hero-copy">
-        <h2>MINIMAL LUXURY.</h2>
-        <p>Timeless essentials. Elevated design. Built for every day.</p>
-        <a href="#">EXPLORE COLLECTION</a>
-      </div>
-    </div>
-    <div class="hero-right"><img src="2shirt.png" alt="Hero Products"></div>
-  </section>
+<section id="process"><div class="w">
+<div class="sh mono rv"><span>(02) Process</span><span>Four frames</span></div>
+<h2 class="rv">Our process runs like a <em>30-second cut.</em></h2>
+<div class="rec mono rv">Rec</div>
+<div class="frames rv">
+<div class="fr"><span class="mono">00:00</span><h3>Discovery</h3><p>We learn your brand, goals and audience.</p></div>
+<div class="fr"><span class="mono">00:08</span><h3>Strategy</h3><p>We map the content, offers and angles to win.</p></div>
+<div class="fr"><span class="mono">00:18</span><h3>Create + launch</h3><p>We produce, post and promote, consistently.</p></div>
+<div class="fr"><span class="mono">00:30</span><h3>Scale</h3><p>We double down on what hits and cut what doesn’t.</p></div>
+</div></div></section>
 
-  <section class="products">
-    <h3>COLLECTION PREVIEW</h3>
-    <div class="grid">
-      <div class="card"><img src="product-1.png"><h4>Chest Logo</h4><p>Coming Soon</p></div>
-      <div class="card"><img src="product-2.png"><h4>Wordmark</h4><p>Coming Soon</p></div>
-      <div class="card"><img src="product-3.png"><h4>Back Print</h4><p>Coming Soon</p></div>
-      <div class="card"><img src="product-4.png"><h4>Line Detail</h4><p>Coming Soon</p></div>
-      <div class="card"><img src="product-5.png"><h4>Minimal Text</h4><p>Coming Soon</p></div>
-      <div class="card"><img src="product-6.png"><h4>Back Wordmark</h4><p>Coming Soon</p></div>
-    </div>
-  </section>
+<section id="lab"><div class="w">
+<div class="sh mono rv"><span>(03) Hook Lab</span><span>Free tool</span></div>
+<h2 class="rv">Steal our <em>opening lines.</em></h2>
+<div class="lab rv">
+<div class="lh mono"><span>Hook_Lab v1.0</span><span>● live</span></div>
+<div class="lb">
+<div class="chips" data-g="plat"><span class="mono">Platform</span><button type="button" class="chip on">TikTok</button><button type="button" class="chip">Reels</button><button type="button" class="chip">Shorts</button></div>
+<div class="chips" data-g="vibe"><span class="mono">Vibe</span><button type="button" class="chip on">Shock</button><button type="button" class="chip">Curiosity</button><button type="button" class="chip">Story</button><button type="button" class="chip">Spicy</button></div>
+<div class="in"><label class="mono" for="hx">&gt; Niche</label><input id="hx" placeholder="coffee shop, gym, skincare" autocomplete="off"><button class="btn" id="hb" type="button">Generate ↗</button></div>
+<div id="hg"></div><div id="sv"></div>
+</div></div></div></section>
 
-  <footer>
-    <div><h4>ABOUT MERSON</h4><p>Merson is a contemporary clothing brand focused on minimal design, premium quality, and timeless style.</p></div>
-    <div><h4>MADE TO LAST</h4><p>We believe in quality over quantity. Each piece is crafted with intention and made to stand the test of time.</p></div>
-    <div><h4>STAY CONNECTED</h4><p>Be the first to know about new drops and exclusive releases.</p></div>
-  </footer>
+<section id="work"><div class="w">
+<div class="sh mono rv"><span>(04) Work</span><span>Results</span></div>
+<h2 class="rv">Receipts, <em>not promises.</em></h2>
+<!-- REPLACE the XX placeholders with your real numbers and case studies -->
+<div class="big rv"><div><b>XXM</b><span class="mono">Views generated</span></div><div><b>XX+</b><span class="mono">Clients grown</span></div><div><b>XX%</b><span class="mono">Avg. engagement lift</span></div></div>
+<div class="rv">
+<div class="case"><span class="mono">Case study</span><h3>Client name</h3><p>Add a short result: followers, views, leads or revenue in a set time.</p><span class="ar">↗</span></div>
+<div class="case"><span class="mono">Case study</span><h3>Client name</h3><p>Add a short result: followers, views, leads or revenue in a set time.</p><span class="ar">↗</span></div>
+<div class="case"><span class="mono">Testimonial</span><h3>“Add a client quote.”</h3><p>Client name, company</p><span class="ar">↗</span></div>
+</div></div></section>
 
-  <script>
-    document.getElementById('passwordInput').addEventListener('blur', () => {
-      document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width, initial-scale=1.0');
-    });
-    document.getElementById('passwordInput').addEventListener('focus', () => {
-      document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width, initial-scale=1.0');
-    });
+<section><div class="w">
+<div class="sh mono rv"><span>(05) People</span><span>Founder-led</span></div>
+<h2 class="rv">Two founders. <em>No middlemen.</em></h2>
+<div class="duo rv">
+<div class="pp"><div class="ph"><span class="mono">Swap in photo</span><b>B</b></div><h3>Brayden</h3><span class="mono">Co-founder / Creator + strategy</span></div>
+<div class="pp"><div class="ph"><span class="mono">Swap in photo</span><b>S</b></div><h3>Sam</h3><span class="mono">Co-founder / Growth + clients</span></div>
+</div></div></section>
 
-    function unlockSite(){
-      const password = document.getElementById('passwordInput').value;
-      const gate = document.getElementById('passwordGate');
-      if(password === 'merson'){
-        gate.style.animation = 'gateExit .65s ease forwards';
-        setTimeout(() => {
-          gate.style.display = 'none';
-        }, 600);
-      }
-    }
-  </script>
+<section id="faq"><div class="w" style="max-width:900px">
+<div class="sh mono rv"><span>(06) FAQ</span><span>Quick answers</span></div>
+<div class="rv">
+<details><summary>Who do you work with?</summary><p>Brands, local businesses and creators who want to grow on social and turn attention into revenue.</p></details>
+<details><summary>How fast will I see results?</summary><p>Most clients see momentum within the first few weeks of consistent posting. Bigger gains build as we learn what works for your audience.</p></details>
+<details><summary>What does it cost?</summary><p>It depends on the services and volume you need. Book a free call and we’ll give you a clear quote.</p></details>
+<details><summary>Do I need to be on camera?</summary><p>No. We can build content around your product, your story, or faceless formats.</p></details>
+</div></div></section>
+
+<section id="contact" class="cx"><div class="w">
+<div class="sh mono rv"><span>(07) Contact</span><span>Free strategy call</span></div>
+<h2 class="rv">Let’s make <em>noise.</em></h2>
+<form id="f" class="f2 rv">
+<input name="name" placeholder="Your name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="brand" placeholder="Brand or page link">
+<select name="need"><option>Short-form video</option><option>Content strategy</option><option>Page management</option><option>Paid social</option><option>Not sure yet</option></select>
+<textarea class="full" name="msg" rows="2" placeholder="What are your goals?"></textarea>
+<button class="btn" type="submit">Send it ↗</button>
+</form></div></section>
+</main>
+<footer><div class="w"><div class="row mono"><span>© <span id="yr"></span> <span data-brand>Your Agency</span></span><a href="#top">Back to top ↑</a></div></div><div class="wm" data-brand>Your Agency</div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+// CHANGE THESE: your agency name and the email that receives form submissions
+var BRAND='Your Agency', EMAIL='hello@youragency.com';
+document.querySelectorAll('[data-brand]').forEach(function(e){e.textContent=BRAND});
+document.title=BRAND+' | Social Media Marketing';
+document.getElementById('yr').textContent=new Date().getFullYear();
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('on')})}
+var clk=document.getElementById('clk');
+function tk(){clk.textContent='Booking open · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}tk();setInterval(tk,30000);
+/* Hook Lab */
+var HK={shock:['Stop scrolling if you own a {x}.','Nobody in the {x} world will tell you this.','This {x} mistake costs people thousands.','I can’t believe more {x} brands skip this.'],curiosity:['You guys remember when every {x} did this? Watch.','The {x} secret nobody talks about.','Wait for the end. This {x} trick is wild.','I tested this {x} idea so you don’t have to.'],story:['I posted about my {x} for 30 days. Here’s what happened.','POV: your {x} just went viral.','A year ago my {x} had zero views. Look at it now.','Day 1 of turning a {x} into a brand.'],spicy:['Unpopular opinion: most {x} content is boring.','Your {x} page is invisible and here’s why.','Stop posting like a {x}. Do this instead.','{x} owners hate this one rule.']};
+var TIP={TikTok:'Put the hook in on-screen text too, not just your voice.',Reels:'Add on-screen text in the first second.',Shorts:'Loop your ending back into the hook.'};
+var saved=[],sel={plat:'TikTok',vibe:'Shock'},hg=document.getElementById('hg'),sv=document.getElementById('sv');
+document.querySelectorAll('.chips').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on')});b.classList.add('on');sel[g.dataset.g]=b.textContent;gen()})});
+function score(t){var s=58+Math.floor(Math.random()*10);if(/\d/.test(t))s+=8;if(/\?/.test(t))s+=6;if(/secret|nobody|wait|stop|mistake|wild|unpopular|hate|can’t believe/i.test(t))s+=12;if(t.length<55)s+=6;return Math.min(99,s)}
+function decode(el,txt){if(rm){el.textContent=txt;return}var n=0,ch='!<>-_/[]{}=+*^?#',id=setInterval(function(){n+=2;el.textContent=txt.split('').map(function(c,i){return i<n||c===' '?c:ch[Math.floor(Math.random()*ch.length)]}).join('');if(n>=txt.length){clearInterval(id);el.textContent=txt}},24)}
+function cp(b,t){try{navigator.clipboard.writeText(t)}catch(e){}var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1200)}
+function nx(){return(document.getElementById('hx').value.trim()||'brand').slice(0,40)}
+function pick(x){var a=HK[sel.vibe.toLowerCase()];return a[Math.floor(Math.random()*a.length)].replace('{x}',x)}
+function fill(d,txt){var s=score(txt),i=d.querySelector('.m i'),st=d.querySelector('.st');decode(d.querySelector('.t'),txt);i.style.width='0';setTimeout(function(){i.style.width=s+'%'},60);d.querySelector('.sc').textContent=s+'/100';st.textContent='Save';st.classList.remove('on')}
+function card(txt,n){var d=document.createElement('div');d.className='hk';d.innerHTML='<span class="mono ix">0'+n+'</span><div><div class="t"></div><div class="m"><i></i></div></div><div class="ac"><b class="mono sc"></b><button type="button" class="tb re">Reroll</button><button type="button" class="tb st">Save</button><button type="button" class="tb cp">Copy</button></div>';fill(d,txt);d.querySelector('.re').onclick=function(){fill(d,pick(nx()))};d.querySelector('.st').onclick=function(){var t=d.querySelector('.t').textContent,k=saved.indexOf(t);if(k<0){saved.push(t);this.textContent='Saved';this.classList.add('on')}else{saved.splice(k,1);this.textContent='Save';this.classList.remove('on')}drawSaved()};d.querySelector('.cp').onclick=function(){cp(this,d.querySelector('.t').textContent)};return d}
+function drawSaved(){sv.innerHTML='';if(!saved.length)return;var h=document.createElement('h4');h.className='mono';h.textContent='Saved hooks ('+saved.length+')';sv.appendChild(h);saved.forEach(function(t){var p=document.createElement('div');p.className='sv';p.textContent=t;sv.appendChild(p)});var b=document.createElement('button');b.type='button';b.className='btn';b.style.marginTop='16px';b.textContent='Copy all';b.onclick=function(){cp(b,saved.join('\n'))};sv.appendChild(b)}
+function gen(){var x=nx(),seen={},out=[];while(out.length<3){var t=pick(x);if(!seen[t]){seen[t]=1;out.push(t)}}hg.innerHTML='';out.forEach(function(t,i){hg.appendChild(card(t,i+1))});var tp=document.createElement('div');tp.className='tip mono';tp.textContent=sel.plat+' tip: '+TIP[sel.plat]+' · Strength is a rule-based score, not a prediction.';hg.appendChild(tp)}
+document.getElementById('hb').addEventListener('click',gen);
+document.getElementById('hx').addEventListener('keydown',function(e){if(e.key==='Enter')gen()});
+gen();
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var d=new FormData(ev.target);var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nBrand: '+d.get('brand')+'\nInterested in: '+d.get('need')+'\n\n'+d.get('msg');window.location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('New inquiry from '+d.get('name'))+'&body='+encodeURIComponent(body)});
+</script>
 </body>
 </html>
